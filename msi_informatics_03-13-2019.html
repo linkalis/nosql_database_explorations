@@ -11917,7 +11917,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="What-do-we-mean-by-'NoSQL'?">What do we mean by 'NoSQL'?<a class="anchor-link" href="#What-do-we-mean-by-'NoSQL'?">&#182;</a></h1><p>NoSQL databases don't like to be labeled!</p>
 <blockquote><p>"...when 'NoSQL' is applied to a database, it refers to an <strong>ill-defined set</strong> of mostly open-source databases, mostly developed in the early 21st century, and mostly not using SQL." (<em>NoSQL Distilled</em>, p. 11)</p>
-<p>"To summarize the summary, it neither makes sense to precisely define NoSQL, nor to simply say that Elasticsearch is a "document store"-type NoSQL-database." (<a href="https://www.elastic.co/blog/found-elasticsearch-as-nosql">ElasticSearch as a NoSQL Database</a>)</p>
+<p>"To summarize the summary, <strong>it neither makes sense to precisely define NoSQL</strong>, nor to simply say that Elasticsearch is a "document store"-type NoSQL-database." (<a href="https://www.elastic.co/blog/found-elasticsearch-as-nosql">ElasticSearch as a NoSQL Database</a>)</p>
 </blockquote>
 
 </div>
@@ -11928,26 +11928,18 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p><strong>Key-Value</strong> --&gt; Riak</p>
-</li>
 <li><p><strong>Document</strong> --&gt; MongoDB, Elasticsearch</p>
-</li>
-<li><p><strong>Column-Family</strong> --&gt; Cassandra</p>
 </li>
 <li><p><strong>Graph</strong> --&gt; Neo4j</p>
 </li>
+<li><p><strong>Key-Value</strong> --&gt; Riak</p>
+</li>
+<li><p><strong>Column-Family</strong> --&gt; Cassandra</p>
+</li>
 </ul>
 <p>(<em>NoSQL Distilled</em>, p. xvii)</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/documents.png" alt="document icon" width="300" style="float:left;padding:20px"/></p>
-<p><img src="img/graph.png" alt="graph icon" width="400" style="float:left;padding:20px"/></p>
+<p><img src="img/documents.png" alt="document icon" width="200" style="float:left;padding:20px"/></p>
+<p><img src="img/graph.png" alt="graph icon" width="300" style="float:left;padding:20px"/></p>
 
 </div>
 </div>
@@ -12005,8 +11997,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Distributed-Reality">The Distributed Reality<a class="anchor-link" href="#The-Distributed-Reality">&#182;</a></h2><p><img src="img/cloudformation_fail.png" alt="document icon" width="600"/></p>
-<p><img src="img/cloudformation_error.png" alt="document icon" width="400"/></p>
+<h2 id="The-Distributed-Reality">The Distributed Reality<a class="anchor-link" href="#The-Distributed-Reality">&#182;</a></h2><p><img src="img/cloudformation_fail.png" alt="document icon" width="800"/></p>
+<p><img src="img/cloudformation_error.png" alt="document icon" width="600"/></p>
 
 </div>
 </div>
@@ -12015,11 +12007,9 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/cloudformation_success.png" alt="document icon" width="600"/></p>
-<p><img src="img/cloudformation_mongo_connection.png" alt="document icon" width="400"/>
-<img src="img/cloudformation_mongo_connection_fail.png" alt="document icon" width="400"/></p>
-<p><a href="https://docs.docker.com/docker-for-aws/">Docker for AWS</a></p>
-<p><a href="https://docs.aws.amazon.com/quickstart/latest/mongodb/welcome.html">MongoDB on the AWS Cloud</a></p>
+<p><img src="img/cloudformation_success.png" alt="document icon" width="800"/>
+<img src="img/cloudformation_mongo_connection.png" alt="document icon" width="600"/>
+<img src="img/cloudformation_mongo_connection_fail.png" alt="document icon" width="600" /></p>
 
 </div>
 </div>
@@ -12031,6 +12021,8 @@ a.anchor-link {
 <h3 id="Problem-#1:">Problem #1:<a class="anchor-link" href="#Problem-#1:">&#182;</a></h3><p><img src="img/cloudformation_cost_estimate.png" alt="document icon" width="500"/></p>
 <h3 id="Problem-#2:">Problem #2:<a class="anchor-link" href="#Problem-#2:">&#182;</a></h3><blockquote><p>"Persistent volumes aren't quite 'there' yet. [...] it can be dangerous to store data in Kubernetes persistent volumes, since you can't do backup and restore." (Practitioner interview)</p>
 </blockquote>
+<p><a href="https://docs.docker.com/docker-for-aws/">Docker for AWS</a></p>
+<p><a href="https://docs.aws.amazon.com/quickstart/latest/mongodb/welcome.html">MongoDB on the AWS Cloud</a></p>
 
 </div>
 </div>
@@ -12256,32 +12248,6 @@ RETURN t</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Which-hashtags-have-the-broadest-global-popularity?-(i.e.-are-used-in-the-most-geographically-dispersed-set-of-places)">Which hashtags have the broadest global popularity? (i.e. are used in the most geographically dispersed set of places)<a class="anchor-link" href="#Which-hashtags-have-the-broadest-global-popularity?-(i.e.-are-used-in-the-most-geographically-dispersed-set-of-places)">&#182;</a></h4>
-<pre><code>MATCH 
-(p1:Place)&lt;-[:LOCATED_AT]-(t1:Tweet)-[:HASHTAGS]-&gt;(h:Hashtag),
-(p2:Place)&lt;-[:LOCATED_AT]-(t2:Tweet)-[:HASHTAGS]-&gt;(h:Hashtag)
-WHERE h = h 
-AND p1.place_id &lt;&gt; '9999999'
-AND p2.place_id &lt;&gt; '9999999'
-RETURN h.hashtag_id, count(DISTINCT p1), count(DISTINCT p2), avg(distance(p1.centroid, p2.centroid))
-ORDER BY count(DISTINCT p1) DESC, avg(distance(p1.centroid, p2.centroid)) DESC</code></pre>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="img/neo4j_hashtag_query_results.png" alt="hashtag query results, with HappyNewYear at the top" width="800"/></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Which-users-appear-to-be-the-most-influential,-based-on-how-many-mentions-they've-received?">Which users appear to be the most influential, based on how many mentions they've received?<a class="anchor-link" href="#Which-users-appear-to-be-the-most-influential,-based-on-how-many-mentions-they've-received?">&#182;</a></h4>
 <pre><code>CALL algo.pageRank.stream('User', 'MENTIONS', { iterations: 20, dampingFactor: 0.85 })
 YIELD nodeId, score
@@ -12467,7 +12433,7 @@ RETURN count(t)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="img/oreilly_designing_data_intensive_applications.png" alt="Designing Data-Intensive Applications Book Cover" width="250" style="float:left;padding:10px"/></p>
 <p><img src="img/nosql_distilled.jpg" alt="NoSQL Distilled Book Cover" width="250" style="float:left;padding:10px"/></p>
-<p><img src="img/lynda_database_clinic.png" alt="Lynda Database Clinic screenshot" width="400" style="float:left;padding:10px"/></p>
+<p><img src="img/lynda_database_clinic.png" alt="Lynda Database Clinic screenshot" width="300" style="float:left;padding:10px"/></p>
 
 </div>
 </div>
